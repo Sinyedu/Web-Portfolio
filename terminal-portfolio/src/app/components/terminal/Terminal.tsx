@@ -2,65 +2,52 @@
 
 import { useState } from "react";
 import TerminalInput from "./TerminalInput";
-import type { CommandOutput } from "@/core/command/commands";
 import { commandMap } from "@/core/command/commands";
+import message from "@/app/data/message.json";
+import { ReactNode } from "react";
 
 type HistoryEntry = {
   input: string;
-  output: CommandOutput;
+  output: ReactNode;
 };
 
 const Terminal = () => {
-  const [history, setHistory] = useState<HistoryEntry[]>([
-    {
-      input: "",
-      output: (
-        <>
-          <div>Hello! Welcome to my professional/personal portfolio!</div>
-          <div>Here are some commands you can use to navigate through:</div>
-          <ul className="list-disc ml-6">
-            <li>about</li>
-            <li>clear</li>
-          </ul>
-        </>
-      ),
-    },
-  ]);
+  const { terminal, commands } = message;
+
+  const initialMessage: HistoryEntry = {
+    input: "",
+    output: (
+      <>
+        <div>{terminal.welcome}</div>
+        <div>{terminal.intro}</div>
+        <ul className="list-disc ml-6">
+          <li>{commands.help}</li>
+          <li>{commands.about}</li>
+          <li>{commands.projects}</li>
+          <li>{commands.skills}</li>
+          <li>{commands.contact}</li>
+          <li>{commands.clear}</li>
+        </ul>
+      </>
+    ),
+  };
+
+  const [history, setHistory] = useState<HistoryEntry[]>([initialMessage]);
 
   const handleCommand = (input: string) => {
     const command = input.toLowerCase();
 
-    if (command === "clear") {
-      // Clear terminal history except welcome message
-      setHistory([
-        {
-          input: "",
-          output: (
-            <>
-              <div>Hello! Welcome to my professional/personal portfolio!</div>
-              <div>Here are some commands you can use to navigate through:</div>
-              <ul className="list-disc ml-6">
-                <li>help</li>
-                <li>about</li>
-                <li>clear</li>
-              </ul>
-            </>
-          ),
-        },
-      ]);
+    if (command === commands.clear) {
+      setHistory([initialMessage]);
       return;
     }
 
-    const commandOutput = commandMap[command];
+    const commandOutput = commandMap[command] || commandMap.default;
     setHistory((prev) => [
       ...prev,
       {
         input,
-        output: commandOutput ? (
-          commandOutput()
-        ) : (
-          <div>Command not found: {input}</div>
-        ),
+        output: commandOutput(),
       },
     ]);
   };

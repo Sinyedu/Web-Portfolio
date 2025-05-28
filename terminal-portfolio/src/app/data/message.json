@@ -1,13 +1,70 @@
 {
+  "commands": {
+    "help": "help",
+    "about": "about",
+    "clear": "clear",
+    "projects": "projects",
+    "contact": "contact",
+    "skills": "skills"
+  },
   "aboutme": {
     "intro": "Hi! I'm Simon Erik Nyblom",
-    "message": "I'm a motivated frontend developer that wants to create great user experiences. I have a passion for web development and love to learn new technologies. I am currently looking for new opportunities to grow and contribute to exciting projects.",
-    "connect": "Feel free to connect with me on LinkedIn or GitHub, or send me an email at nyblomsimon@gmail.com"
+    "message": "I'm a motivated frontend developer that wants to create great user experiences...",
+    "connect": "Feel free to connect with me on LinkedIn or GitHub..."
   },
-  "commands": {
-    "clear": "Clear",
-    "about": "About",
-    "help": "Help",
-    "projects": "Projects"
+  "terminal": {
+    "welcome": "Hello! Welcome to my professional/personal portfolio!",
+    "intro": "Here are some commands you can use to navigate through:",
+    "notFound": "Command not found. Type 'help' for a list of commands."
+  },
+  "projects": {
+    "list": [
+      {
+        "name": "Terminal Portfolio",
+        "description": "A CLI-style personal website built with Next.js, TypeScript, and Tailwind CSS.",
+        "link": "https://your-terminal-site.com",
+        "tech": ["Next.js", "TypeScript", "Tailwind", "React"]
+      },
+      {
+        "name": "Blog Platform",
+        "description": "A full-stack blog CMS with markdown support and admin dashboard.",
+        "link": "https://your-blog.com",
+        "tech": ["React", "Express", "MongoDB"]
+      },
+      {
+        "name": "Design System",
+        "description": "Reusable component library with Figma and Storybook integration.",
+        "link": "",
+        "tech": ["Storybook", "Tailwind", "Figma", "TypeScript"]
+      }
+    ]
+  },
+  "skills": {
+    "list": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "Node.js",
+      "PHP",
+      "Git",
+      "GitHub",
+      "Figma",
+      "Postman",
+      "Python",
+      "C#",
+      "Firebase",
+      "REST APIs",
+      "Sourcetree"
+    ]
+  },
+  "contact": {
+    "message": "You can reach me via email or social media:",
+    "email": "nyblomsimon@gmail.com",
+    "github": "https://github.com/Sinyedu",
+    "linkedin": "https://www.linkedin.com/in/simonnyblom/"
   }
 }
