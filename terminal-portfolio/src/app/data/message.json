@@ -1,0 +1,13 @@
+{
+  "aboutme": {
+    "intro": "Hi! I'm Simon Erik Nyblom",
+    "message": "I'm a motivated frontend developer that wants to create great user experiences. I have a passion for web development and love to learn new technologies. I am currently looking for new opportunities to grow and contribute to exciting projects.",
+    "connect": "Feel free to connect with me on LinkedIn or GitHub, or send me an email at nyblomsimon@gmail.com"
+  },
+  "commands": {
+    "clear": "Clear",
+    "about": "About",
+    "help": "Help",
+    "projects": "Projects"
+  }
+}
