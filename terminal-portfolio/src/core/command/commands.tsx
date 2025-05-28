@@ -3,6 +3,7 @@ import message from "@/app/data/message.json";
 import { ProjectData } from "@/core/types/project";
 import { SkillsData } from "@/core/types/skills";
 import { ContactData } from "@/core/types/contact";
+import SkillsTagCloud from "@/app/components/SkillsTagCloud";
 
 export type CommandOutput = ReactNode;
 
@@ -71,11 +72,7 @@ export const commandMap: Record<string, () => CommandOutput> = {
   [cmd.skills]: () => (
     <div className="space-y-1">
       <div>Here are some of my skills:</div>
-      <ul className="list-disc ml-4">
-        {(skillsData.list ?? []).map((skill, i) => (
-          <li key={i}>{skill}</li>
-        ))}
-      </ul>
+      <SkillsTagCloud skillsData={skillsData} />
     </div>
   ),
 
