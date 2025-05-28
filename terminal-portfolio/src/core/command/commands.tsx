@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import message from "@/app/data/message.json"; // assuming this is your JSON file path
+import message from "@/app/data/message.json";
 
 export type CommandOutput = ReactNode;
 const terminal = message.commands;
